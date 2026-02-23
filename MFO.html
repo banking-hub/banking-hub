@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH Digital Finance Hub</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text: #333;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Search Bar Style */
+        .search-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #bankSearch {
+            width: 80%;
+            max-width: 500px;
+            padding: 15px;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #bankSearch:focus {
+            border-color: var(--accent);
+        }
+
+        h2 {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            margin-top: 40px;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .bank-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ddd;
+            min-height: 60px;
+        }
+
+        .bank-card:hover, .bank-card:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+            background-color: var(--accent);
+            color: white;
+            outline: 3px solid #2980b9;
+        }
+
+        footer {
+            text-align: center; 
+            margin-top: 50px; 
+            padding: 20px; 
+            font-size: 0.8rem; 
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PH Banking & Wallet Hub</h1>
+        <p>Direct access to your secure financial portals.</p>
+    </header>
+
+    <div class="container">
+        <div class="search-container">
+            <input type="text" id="bankSearch" placeholder="Search for a bank or wallet (e.g. GCash)..." onkeyup="filterBanks()">
+        </div>
+
+        <main id="main-content">
+            <h2>E-Wallets & Digital Payments</h2>
+            <div class="grid" id="walletGrid">
+                <a href="https://www.gcash.com/" class="bank-card">GCash</a>
+                <a href="https://www.maya.ph/" class="bank-card">Maya</a>
+                <a href="https://coins.ph/" class="bank-card">Coins.ph</a>
+                <a href="https://www.grab.com/ph/pay/" class="bank-card">GrabPay</a>
+                <a href="https://shopee.ph/m/shopeepay" class="bank-card">ShopeePay</a>
+                <a href="https://www.zalora.com.ph/" class="bank-card">Zalora Wallet</a>
+                <a href="https://www.alipay.com/" class="bank-card">Alipay</a>
+                <a href="https://www.lazada.com.ph/helpcenter/lazada-wallet/" class="bank-card">Lazada Wallet</a>
+                <a href="https://www.paypal.com/ph/home" class="bank-card">PayPal</a>
+                <a href="https://www.dragonpay.ph/" class="bank-card">Dragonpay</a>
+                <a href="https://www.truemoney.com.ph/" class="bank-card">TrueMoney</a>
+                <a href="https://cliqq.ph/" class="bank-card">7-11 CLIQQ Pay</a>
+                <a href="https://mlhuillier.com/ml-wallet/" class="bank-card">ML Wallet</a>
+                <a href="https://trustwallet.com/" class="bank-card">Trust Wallet</a>
+            </div>
+
+            <h2>Traditional Banks</h2>
+            <div class="grid" id="bankGrid">
+                <a href="https://www.bdo.com.ph/online-banking" class="bank-card">BDO Online</a>
+                <a href="https://www.bpi.com.ph/personal/banking/digital/online" class="bank-card">BPI Online</a>
+                <a href="https://www.metrobank.com.ph/articles/online-banking" class="bank-card">Metrobank</a>
+                <a href="https://www.rcbconlinebanking.com/" class="bank-card">RCBC Online</a>
+                <a href="https://www.unionbankph.com/online" class="bank-card">UnionBank</a>
+                <a href="https://www.securitybank.com/online-banking/" class="bank-card">Security Bank</a>
+                <a href="https://www.eastwestbanker.com/" class="bank-card">EastWest Bank</a>
+            </div>
+
+            <h2>Digital-Only Banks</h2>
+            <div class="grid" id="digitalGrid">
+                <a href="https://tonikbank.com/" class="bank-card">Tonik Bank</a>
+                <a href="https://www.maya.ph/bank" class="bank-card">Maya Bank</a>
+                <a href="https://diskartech.ph/" class="bank-card">DiskarTech</a>
+                <a href="https://www.cimbbank.com.ph/" class="bank-card">CIMB Bank</a>
+                <a href="https://www.ing.com.ph/" class="bank-card">ING Philippines</a>
+                <a href="https://www.komo.ph/" class="bank-card">Komo (EastWest)</a>
+                <a href="https://www.gotyme.com.ph/" class="bank-card">GoTyme Bank</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>Disclaimer: This is a directory. Ensure you are visiting the official URLs.</p>
+    </footer>
+
+    <script>
+        function filterBanks() {
+            let input = document.getElementById('bankSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('bank-card');
+            
+            for (let i = 0; i < cards.length; i++) {
+                if (cards[i].innerText.toLowerCase().includes(input)) {
+                    cards[i].style.display = "flex";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
